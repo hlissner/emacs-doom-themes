@@ -1,54 +1,54 @@
-;; doom-monokai-spectrum-theme.el --- Spectrum filter of Monokai Pro -*- no-byte-compile: t; -*-
+;; doom-monokai-pro-classic-theme.el --- Pro-Classic filter of Monokai Pro -*- no-byte-compile: t; -*-
 (require 'doom-themes)
 
-;;
-(defgroup doom-monokai-spectrum-theme nil
+;;; Code:
+(defgroup doom-monokai-pro-classic-theme nil
   "Options for doom-molokai."
   :group 'doom-themes)
 
-(defcustom doom-monokai-spectrum-brighter-comments nil
+(defcustom doom-monokai-pro-classic-brighter-comments nil
   "If non-nil, comments will be highlighted in more vivid colors."
-  :group 'doom-monokai-spectrum-theme
+  :group 'doom-monokai-pro-classic-theme
   :type 'boolean)
 
-(defcustom doom-monokai-spectrum-comment-bg doom-monokai-spectrum-brighter-comments
-  "If non-nil, comments will have a subtle, darker background. Enhancing their
-legibility."
-  :group 'doom-monokai-spectrum-theme
+(defcustom doom-monokai-pro-classic-comment-bg doom-monokai-pro-classic-brighter-comments
+  "If non-nil, comments will have a subtle, darker background.
+Enhancing their legibility."
+  :group 'doom-monokai-pro-classic-theme
   :type 'boolean)
 
-(defcustom doom-monokai-spectrum-padded-modeline doom-themes-padded-modeline
-  "If non-nil, adds a 4px padding to the mode-line. Can be an integer to
-determine the exact padding."
-  :group 'doom-monokai-spectrum-theme
+(defcustom doom-monokai-pro-classic-padded-modeline doom-themes-padded-modeline
+  "If non-nil, adds a 4px padding to the mode-line.
+Can be an integer to determine the exact padding."
+  :group 'doom-monokai-pro-classic-theme
   :type '(choice integer boolean))
 
 ;;
-(def-doom-theme doom-monokai-spectrum
+(def-doom-theme doom-monokai-pro-classic
   "A dark, vibrant theme inspired by Textmate's Monokai."
 
   ;; name        gui       256       16
-  ((bg         '("#222222" nil       nil            ))
-   (bg-alt     '("#191919" nil       nil            ))
+  ((bg         '("#272821" nil       nil            ))
+   (bg-alt     '("#161613" nil       nil            ))
    (base0      '("#131313" "#121212" "black"        ))
-   (base1      '("#191919" "#1c1c1c" "black"        ))
-   (base2      '("#2d2c2d" "#262626" "brightblack"  ))
-   (base3      '("#363537" "#3a3a3a" "brightblack"  ))
-   (base4      '("#525053" "#585858" "brightblack"  ))
-   (base5      '("#585858" "#585858" "brightblack"  ))
-   (base6      '("#69676c" "#6c6c6c" "brightblack"  ))
-   (base7      '("#8b888f" "#8a8a8a" "brightblack"  ))
-   (base8      '("#bab6c0" "#bcbcbc" "white"        ))
-   (fg         '("#f7f1ff" "#ffffff" "brightwhite"  ))
+   (base1      '("#161613" "#1c1c1c" "black"        ))
+   (base2      '("#2f2f2a" "#262626" "brightblack"  ))
+   (base3      '("#3b3c35" "#3a3a3a" "brightblack"  ))
+   (base4      '("#57584f" "#585858" "brightblack"  ))
+   (base5      '("#5d5e55" "#585858" "brightblack"  ))
+   (base6      '("#6e7066" "#6c6c6c" "brightblack"  ))
+   (base7      '("#919288" "#8a8a8a" "brightblack"  ))
+   (base8      '("#bcbeb2" "#bcbcbc" "white"        ))
+   (fg         '("#fdfff1" "#ffffff" "brightwhite"  ))
    (fg-alt     '("#c6c6c6" "#c6c6c6" "white"        ))
 
    (grey       base4)
-   (red        '("#fc618d" "#ff69bf" "red"          ))
-   (orange     '("#fd9353" "#ff7f50" "brightred"    ))
-   (green      '("#7bd88f" "#90ee90" "green"        ))
-   (yellow     '("#fce566" "#f0e68c" "yellow"       ))
-   (violet     '("#948ae3" "#9370db" "magenta"      ))
-   (cyan       '("#5ad4e6" "#40e0d0" "brightcyan"   ))
+   (red        '("#f82570" "#ff69bf" "red"          ))
+   (orange     '("#fc961f" "#ff7f50" "brightred"    ))
+   (green      '("#a6e12d" "#90ee90" "green"        ))
+   (yellow     '("#e4db73" "#f0e68c" "yellow"       ))
+   (violet     '("#ae81ff" "#9370db" "magenta"      ))
+   (cyan       '("#66d9ee" "#40e0d0" "brightcyan"   ))
    (magenta     cyan)
    (blue        cyan)
    (dark-blue   cyan)
@@ -60,8 +60,8 @@ determine the exact padding."
    (vertical-bar   (doom-lighten bg 0.1))
    (selection      base2)
    (builtin        violet)
-   (comments       (if doom-monokai-spectrum-brighter-comments violet base6))
-   (doc-comments   (if doom-monokai-spectrum-brighter-comments (doom-lighten violet 0.1) (doom-lighten base6 0.25)))
+   (comments       (if doom-monokai-pro-classic-brighter-comments violet base6))
+   (doc-comments   (if doom-monokai-pro-classic-brighter-comments (doom-lighten violet 0.1) (doom-lighten base6 0.25)))
    (constants      violet)
    (functions      green)
    (keywords       magenta)
@@ -82,8 +82,8 @@ determine the exact padding."
    ;; custom categories
    (hidden     `(,(car bg) "black" "black"))
    (-modeline-pad
-    (when doom-monokai-spectrum-padded-modeline
-      (if (integerp doom-monokai-spectrum-padded-modeline) doom-monokai-spectrum-padded-modeline 4)))
+    (when doom-monokai-pro-classic-padded-modeline
+      (if (integerp doom-monokai-pro-classic-padded-modeline) doom-monokai-pro-classic-padded-modeline 4)))
 
 
    (org-quote `(,(doom-lighten (car bg) 0.05) "#1f1f1f")))
@@ -319,6 +319,16 @@ determine the exact padding."
    (lsp-ui-peek-highlight                       :inherit 'isearch)
    (lsp-ui-peek-filename                        :foreground base8 :bold bold)
 
+   ;; treemacs
+   (treemacs-git-added-face                     :foreground green)
+   (treemacs-git-conflict-face                  :foreground red)
+   (treemacs-git-ignored-face                   :foreground base6)
+   (treemacs-git-modified-face                  :foreground violet)
+   (treemacs-git-renamed-face                   :foreground orange)
+   (treemacs-git-untracked-face                 :inherit 'treemacs-git-renamed-face)
+   (treemacs-on-failure-pulse-face              :foreground base0 :background red)
+   (treemacs-on-success-pulse-face              :foreground base0 :background green)
+
    ;;; web-mode
    ;;; html
    (web-mode-html-tag-face                      :foreground red)
@@ -336,4 +346,4 @@ determine the exact padding."
   ;; ()
   )
 
-;;; doom-monokai-spectrum-theme.el ends here
+;;; doom-monokai-pro-classic-theme.el ends here
